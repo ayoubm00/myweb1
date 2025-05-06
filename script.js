@@ -47,15 +47,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // إرسال النموذج
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // هنا يمكنك إضافة كود إرسال النموذج
-            alert('تم استلام رسالتك، شكراً لتواصلك معي!');
-            contactForm.reset();
-        });
-    }
 });
