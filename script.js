@@ -48,3 +48,27 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
+
+// الحصول على زر الانتقال إلى الأعلى
+const btn = document.getElementById("scrollTopBtn");
+
+window.onscroll = function () {
+  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+  if (scrollTop > 300) {
+    btn.classList.add("show");
+  } else {
+    btn.classList.remove("show");
+  }
+
+  // تحديث تقدم الدائرة
+  const scrolled = (scrollTop / scrollHeight) * 251;
+  btn.querySelector("circle").style.strokeDashoffset = 251 - scrolled;
+};
+
+btn.onclick = function () {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
